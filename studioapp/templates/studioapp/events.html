@@ -1,0 +1,77 @@
+{% extends 'studioapp/base.html' %} {% load static %} {% block content %}
+<section class="featured section-padding-100-70 bg-dark">
+    <div class="container">
+        <h3 style="font-family: 'Archivo Narrow', sans-serif;" class="text-light"> Featured Events </h3>
+
+        <div class="row">
+            {% for post in feature %}
+            <div class="col-sm-6 col-lg-4 col-md-4">
+                <div class="card text-white bg-danger mb-3">
+                    <div class="cutter position-relative">
+                        <img class="card-img-top" src="{{ post.event_image.url }}" alt="Card image cap">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title" style="font-family: 'Archivo Narrow', sans-serif;">{{ post.title}}</h5>
+                        <h6 class="card-title mb-2" style="font-family: 'Archivo Narrow', sans-serif;">Hats_off Records
+                        </h6>
+
+                        <p><i class='bx bx-calendar'></i> {{ post.event_date }}</p>
+                        <p><i class='bx bx-time'></i> {{ post.event_time }}</p>
+                        <p><i class='bx bx-map'></i> {{ post.location }}</p>
+                        <p><i class='bx bx-purchase-tag-alt'></i> {{ post.entry_fee }}</p>
+                    </div>
+
+                    <div class="text-center">
+                        <a href="{{ post.purchase_link }}" class="btn btn-outline-light mb-2">Buy Ticket</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="event">
+    <div class="container">
+        <h3 style="font-family: 'Archivo Narrow', sans-serif;"> More Events </h3>
+        <div class="row">
+            {% for post in events %}
+            <div class="col-sm-6 col-lg-4 col-md-4">
+                <div class="card bg-dark text-white " style="max-width: 18rem;">
+                    <img class="card-img img-fluid" src="{{ post.event_image.url }}" alt="Card image">
+                    <div class="card-img-overlay d-flex flex-column justify-content-end">
+                        <h4 class="card-title" style="font-family: 'Archivo Narrow', sans-serif;">{{ post.title}}</h4>
+                        <h6 class="card-title mb-2" style="font-family: 'Archivo Narrow', sans-serif;">Hats_off Records
+                        </h6>
+                        
+                        <hr>
+                        <p><i class='bx bx-calendar'></i> {{ post.event_date }}</p>
+                        <p><i class='bx bx-time'></i> {{ post.event_time }}</p>
+                        <p><i class='bx bx-map'></i> {{ post.location }}</p>
+                        <p><i class='bx bx-purchase-tag-alt'></i> {{ post.entry_fee }}</p>
+
+                        <a href="#" class="btn btn-light"><i class='bx bx-purchase-tag-alt'></i> Ticket</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="text-center">
+            <span>
+                {% if posts.has_previous %}
+                <a href="?page={{ posts.previous_page_number }}{% if request.GET.get.q %}&q={{ request.GET.get.q }}{% endif %}"
+                    class="btn btn-outline-dark"><i class="fa fa-arrow-left"></i> Previous Page</a>
+                {% else %}
+                <li class="disabled btn btn-danger"><span>This is the first page</span></li>&nbsp; {% endif %}
+                {% if posts.has_next %}
+                <a href="?page={{ posts.next_page_number }}{% if request.GET.get.q %}&q={{ request.GET.get.q }}{% endif %}"
+                    class="btn btn-dark">Next Page <i class="fa fa-arrow-right"></i></a>
+                <li class="disabled btn btn-danger"><span>end of pages</span></li>&nbsp; {% endif %}
+
+            </span>
+        </div>
+
+    </div>
+</section>
+{% endblock content %}
