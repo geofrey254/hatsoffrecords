@@ -740,9 +740,9 @@ li {
     transition: transform .5s;
 }
 
-.social-link .fab:hover {
+.social-link .fa:hover {
     background: #000;
-    color: #0D786F;
+    color: #ffffff;
     transform: translateY(-7px);
 }
 
