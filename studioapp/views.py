@@ -16,6 +16,10 @@ def home(request):
     }
     return render(request, 'studioapp/home.html', context)
 
+def about(request):
+    songs = Song.objects.filter(status=1).order_by('-released_on')[0:10]
+    return render(request, 'studioapp/about.html', {'songs':songs})
+
 def events(request):
     events = Events.objects.filter(status=1).order_by('event_date')
     feature = Events.objects.filter(featured=True).order_by('event_date')[0:3]
@@ -39,7 +43,7 @@ def events(request):
 def releases(request):
     songs = Song.objects.filter(status=1).order_by('-released_on')
     
-    paginator   = Paginator(songs, 3)
+    paginator   = Paginator(songs, 2)
     page        =   request.GET.get('page')
     try:
         songs   =   paginator.page(page)

@@ -17,8 +17,7 @@ class Song(models.Model):
     title           = models.CharField(max_length=250, null=True)
     artist          = models.CharField(max_length=250, null=True)
     released_on     = models.DateTimeField(auto_now_add=True)
-    # album_art       = models.ImageField(upload_to="album_arts/", null=True, blank=True)
-    album_art       = models.CharField(max_length=10000, null=True, blank=True)
+    album_art       = models.ImageField(upload_to="album_arts/", null=True, blank=True)
     spotify         = models.CharField(max_length=500, null=True, blank=True)
     youtube         = models.CharField(max_length=500, null=True, blank=True)
     soundcloud      = models.CharField(max_length=500, null=True, blank=True)
@@ -107,3 +106,15 @@ class Team(models.Model):
         outputIOStream.seek(0)
         photo   =   InMemoryUploadedFile(outputIOStream, 'ImageField', "%s.jpg" % photo.name.split('.')[0], 'image/jpeg', sys.getsizeof(outputIOStream), None)
         return photo
+    
+
+class Session(models.Model):
+    full_name = models.CharField(max_length=250, null=True, default='John Doe')
+    mobile_number = models.CharField(max_length=40, null=True, default='0712345678')
+    email_address = models.EmailField(null=True)
+    facebook_link = models.CharField(max_length=500, null=True, blank=True)
+    instagram_link = models.CharField(max_length=500, null=True, blank=True)
+    youtube_link = models.CharField(max_length=500, null=True, blank=True)
+    
+    def __str__(self):
+        return self.full_name + ' | ' + str(self.email_address)

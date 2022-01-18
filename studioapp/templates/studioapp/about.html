@@ -1,0 +1,211 @@
+{% extends 'studioapp/base.html' %} {% load static %} {% block content %}
+<section class="about-hero section-padding-100-70">
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <h3 class="text-light">If the Music is too <span class="text-warning"
+                        style="font-size: 3rem;">Loud</span> you’re too old</h3>
+            </div>
+
+            <div class="col-6 text-center align-content-center social-about">
+                <h1 class="mt-3 text-light">"Art of the <span class="text-warning">Muses</span>"</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="about-section">
+    <div class="container section-padding-100-70">
+        <div class="my-3 d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+                <h2>Who are we?</h2>
+            </div>
+            <div class="text-primary">
+                <a href="/#" class="mx-1">
+                    <i class='bx bxl-twitter lead text-black'></i>
+                </a>
+                <a href="/#" class="w-6 mx-1">
+                    <i class='bx bxl-facebook lead text-black'></i>
+                </a>
+                <a href="/#" class="w-6 mx-1">
+                    <i class='bx bxl-linkedin lead text-black'></i>
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 p-4">
+                <div class="text-secondary">
+                    <p class="my-2" style="line-height: 2;">Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the
+                        1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen
+                        book. It has survived not only five centuries, but also the leap into electronic typesetting,
+                        remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
+                        sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
+                        Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    <br>
+                    <br>
+
+                    <blockquote class="text-info p-3 font-italic" style="border-left: 4px solid black; line-height: 2;">
+                        Lorem Ipsum is simply dummy text of the
+                        printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever
+                        since the 1500s</blockquote>
+
+                    <br>
+                </div>
+
+            </div>
+
+            <div class="col-lg-4 p-4 border-left latest-list">
+                <div class="border-bottom mb-3 pb-3 px-2">
+                    <div class="d-flex align-items-center">
+
+                        <a href="#" style="font-size: 20px;" class="text-capitalize font-weight-bold mb-0 text-info"><i
+                                class='bx bxs-playlist bx-flashing'></i> Latest Releases</a>
+                    </div>
+                </div>
+
+                {% for song in songs %}
+
+                <div class="d-flex align-items-start mb-3 l-list">
+                    <div class="pe-5">
+                        <img class="img-fluid border rounded-3 " style="width: 110px;" src="{{ song.album_art.url }}"
+                            alt="">
+                    </div>
+
+                    <div>
+                        <div class="d-flex align-items-center">
+                            <small class="text-info">{{ song.released_on|timesince }} ago</small>
+                        </div>
+                        <h6>{{ song.title }} <br> <small class="text-secondary">{{ song.artist }}</small></h6>
+
+                        <a href="#" class="text-secondary"><i class='bx bxl-youtube lead'></i></a>
+                        <a href="#" class="text-secondary"><i class='bx bxl-spotify lead'></i></a>
+                        <a href="#" class="text-secondary"><i class='bx bxl-tiktok lead'></i></a>
+                        <a href="#" class="text-secondary"><i class='bx bxl-soundcloud lead'></i></a>
+                    </div>
+                </div>
+
+                {% endfor %}
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="our-team section-padding-100-70">
+    <div class="container">
+        <div class="text-center">
+            <h1 class="text-light" style="font-size:5rem; font-family: 'Archivo Narrow', sans-serif; text-shadow: 2px 2px #ff0000;">The Team</h1>
+        </div>
+        <ul class="list-members">
+            <li class="member">
+              <div class="member-image">
+                <img src="https://fadzrinmadu.github.io/hosted-assets/team-section-design-using-html-and-css/1.png">
+              </div>
+              <div class="member-info">
+                <h3>D Kinandi</h3>
+                <p>Founder & CEO</p>
+                <div class="social-link">
+                  <i class="fa fa-facebook-f"></i>
+                  <i class="fa fa-twitter"></i>
+                  <i class="fa fa-linkedin-in"></i>
+                </div>
+              </div>
+            </li>
+            <li class="member">
+              <div class="member-image">
+                <img src="https://fadzrinmadu.github.io/hosted-assets/team-section-design-using-html-and-css/2.png">
+              </div>
+              <div class="member-info">
+                <h3>Cephas K</h3>
+                <p>Videographer</p>
+                <div class="social-link">
+                  <i class="fa fa-facebook-f"></i>
+                  <i class="fa fa-twitter"></i>
+                  <i class="fa fa-linkedin-in"></i>
+                </div>
+              </div>
+            </li>
+            <li class="member">
+              <div class="member-image">
+                <img src="https://fadzrinmadu.github.io/hosted-assets/team-section-design-using-html-and-css/3.png">
+              </div>
+              <div class="member-info">
+                <h3>Joy L</h3>
+                <p>Accounts</p>
+                <div class="social-link">
+                  <i class="fa fa-facebook-f"></i>
+                  <i class="fa fa-twitter"></i>
+                  <i class="fa fa-linkedin-in"></i>
+                </div>
+              </div>
+            </li>
+            <li class="member">
+              <div class="member-image">
+                <img src="https://fadzrinmadu.github.io/hosted-assets/team-section-design-using-html-and-css/4.png">
+              </div>
+              <div class="member-info">
+                <h3>Nicole Waweru</h3>
+                <p>Public Relations</p>
+                <div class="social-link">
+                  <i class="fa fa-facebook-f"></i>
+                  <i class="fa fa-twitter"></i>
+                  <i class="fa fa-linkedin-in"></i>
+                </div>
+              </div>
+            </li>
+            <li class="member">
+                <div class="member-image">
+                  <img src="https://fadzrinmadu.github.io/hosted-assets/team-section-design-using-html-and-css/4.png">
+                </div>
+                <div class="member-info">
+                  <h3>Geofrey M</h3>
+                  <p>Producer</p>
+                  <div class="social-link">
+                    <i class="fa fa-facebook-f"></i>
+                    <i class="fa fa-twitter"></i>
+                    <i class="fa fa-linkedin-in"></i>
+                  </div>
+                </div>
+              </li>
+              <li class="member">
+                <div class="member-image">
+                  <img src="https://fadzrinmadu.github.io/hosted-assets/team-section-design-using-html-and-css/4.png">
+                </div>
+                <div class="member-info">
+                  <h3>Sylvia N</h3>
+                  <p>Enforcer</p>
+                  <div class="social-link">
+                    <i class="fa fa-facebook-f"></i>
+                    <i class="fa fa-twitter"></i>
+                    <i class="fa fa-linkedin-in"></i>
+                  </div>
+                </div>
+              </li>
+          </ul>
+    </div>
+</section>
+
+<section class="socials">
+  <div class="container my-5 text-white" style="background-color: #19d2db;">
+      <div class="p-5 d-flex flex-column align-items-center justify-content-between">
+          <span class="text-light">Socials</span>
+          <h1 class="mb-4 mt-2 font-weight-bold">Follow Us</h1>
+          <div class="text-white">
+              <a href="/#" class="mx-1 text-white">
+                  <i class="bx bxl-facebook bx-tada-hover"></i>
+              </a>
+              <a href="/#" class="w-6 mx-1 text-white">
+                  <i class="bx bxl-twitter bx-tada"></i>
+              </a>
+              <a href="/#" class="w-6 mx-1 text-white">
+                  <i class="bx bxl-instagram bx-tada-hover"></i>
+              </a>
+              <a href="/#" class="w-6 mx-1 text-white">
+                  <i class="bx bxl-google-plus bx-tada-hover"></i>
+              </a>
+          </div>
+      </div>
+  </div>
+</section>
+{% endblock %}

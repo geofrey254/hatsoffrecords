@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
         crossorigin="anonymous" />
 
-    <link rel="stylesheet" href="{% static 'css/off.css' %}">
+    <link rel="stylesheet" href="{% static 'css/studio.css' %}">
     <link rel="stylesheet" href="{% static 'css/res.css' %}">
 
     <link rel="shortcut icon" href="{% static 'img/hatsoff.png' %}" type="image/x-icon">
@@ -59,11 +59,11 @@
                 </ul>
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link text-dark" href="#">Home</a>
+                        <a class="nav-link text-dark" href="{%url 'home' %}">Home</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link text-dark" href="#">About</a>
+                        <a class="nav-link text-dark" href="{%url 'about' %}">About</a>
                     </li>
 
                     <li class="nav-item">

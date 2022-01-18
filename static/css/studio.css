@@ -637,7 +637,7 @@ section {
 
 .single-release .bxl-youtube {
     color: #FF0000;
-    
+
 }
 
 .single-release .bxl-spotify {
@@ -650,4 +650,175 @@ section {
 
 .single-release .bxl-soundcloud {
     color: #ff8800;
+}
+
+.text-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-box h4 {
+    text-align: center;
+    font-family: 'Poppins', cursive;
+    font-weight: 700;
+}
+
+/* About page */
+.about-hero {
+    background-color: #1DF5FF;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='100' y1='33' x2='100' y2='-3'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='100' y1='135' x2='100' y2='97'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='%2300cfd9' fill-opacity='0.6'%3E%3Crect x='100' width='100' height='100'/%3E%3Crect y='100' width='100' height='100'/%3E%3C/g%3E%3Cg fill-opacity='0.5'%3E%3Cpolygon fill='url(%23a)' points='100 30 0 0 200 0'/%3E%3Cpolygon fill='url(%23b)' points='100 100 0 130 0 100 200 100 200 130'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+}
+
+li {
+    list-style: none;
+}
+
+.our-team {
+    background-color: #1DF5FF;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='100' y1='33' x2='100' y2='-3'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='100' y1='135' x2='100' y2='97'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='%2300cfd9' fill-opacity='0.6'%3E%3Crect x='100' width='100' height='100'/%3E%3Crect y='100' width='100' height='100'/%3E%3C/g%3E%3Cg fill-opacity='0.5'%3E%3Cpolygon fill='url(%23a)' points='100 30 0 0 200 0'/%3E%3Cpolygon fill='url(%23b)' points='100 100 0 130 0 100 200 100 200 130'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+}
+
+
+/* style member component */
+.list-members {
+    background-color: #1DF5FF;
+    width: 80%;
+    margin: 4% auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.member {
+    flex-basis: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.member-image {
+    width: 50%;
+    height: 100%;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+}
+
+.member-image img {
+    width: 100%;
+    height: 100%;
+    transition: 1s;
+}
+
+.member-image:hover img {
+    transform: scale(1.1);
+}
+
+.member-info {
+    width: 50%;
+    text-align: center;
+}
+
+.member-info h3 {
+    color: white;
+    text-shadow: 2px 2px #000000;
+}
+
+.member-info p {
+    color: white;
+    margin: 20px 0;
+}
+
+
+/* style social link */
+.social-link .fab {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    border: 1px solid #000;
+    margin: 0 7px;
+    cursor: pointer;
+    transition: transform .5s;
+}
+
+.social-link .fab:hover {
+    background: #000;
+    color: #5bc0de;
+    transform: translateY(-7px);
+}
+
+/* Membuat segitiga */
+.member-image::after {
+    content: '';
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-right: 15px solid #1DF5FF;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+
+/* Merubah posisi member-image dengan member-info */
+@media screen and (min-width: 771px) {
+
+    .member:nth-child(4n+3) .member-info,
+    .member:nth-child(4n+4) .member-info {
+        order: 1;
+    }
+
+    .member:nth-child(4n+3) .member-image,
+    .member:nth-child(4n+4) .member-image {
+        order: 2;
+    }
+
+    /* Merubah posisi sigitiga pada baris genap */
+    .member:nth-child(4n+3) .member-image::after,
+    .member:nth-child(4n+4) .member-image::after {
+        left: 0;
+        right: auto;
+        transform: translateY(-50%) rotateZ(180deg);
+    }
+}
+
+
+/* Mobile Styles */
+@media screen and (max-width: 770px) {
+    .list-members {
+        width: 95%;
+    }
+
+    .member {
+        flex-basis: 100%;
+        font-size: 14px;
+    }
+
+    .social-link .fab {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+    }
+
+    .member:nth-child(even) .member-info {
+        order: 1;
+    }
+
+    .member:nth-child(even) .member-image {
+        order: 2;
+    }
+
+    /* Merubah posisi sigitiga elemen genap */
+    .member:nth-child(even) .member-image::after {
+        left: 0;
+        right: auto;
+        transform: translateY(-50%) rotateZ(180deg);
+    }
+}
+
+.socials i{
+    font-size: 50px;
 }

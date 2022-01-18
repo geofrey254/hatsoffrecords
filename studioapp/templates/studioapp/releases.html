@@ -2,41 +2,61 @@
 <section class="section-padding-100-70 bg-release">
   <div class="container">
     <div class="col-md-10 mx-auto col-lg-8 p-4 p-md-5 border rounded-3 bg-light">
-      <h4 class="text-dark text-center">Latest Releases</h4>
+      <div class="text-box">
+        <h4 class="text-center"> Hats_off Chart
+        </h4>
+      </div>
       {% for song in songs %}
       <div class="d-flex text-muted pt-3 single-release">
         <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
           <div class="d-flex justify-content-between">
-            <h5 class="sng-title text-dark"><a href="{{ song.youtube }}"><i
+            <h5 class="sng-title text-dark"><a href="{{ song.youtube }}" target="_blank" rel="noopener noreferrer"><i
                   class='bx-fw bx bx-play-circle lead bx-burst text-info'></i></a> {{ song.title }} - <small
                 class="text-info">{{ song.artist }}</small></h5>
-            <img src="{{ song.album_art }}" alt="" width="70" class="border rounded-3">
+            <img src="{{ song.album_art.url }}" alt="" width="70" class="border rounded-3">
           </div>
           <a href="#" class="text-info"><i class='bx bxl-youtube lead'></i></a>
           <a href="#" class="text-info"><i class='bx bxl-spotify lead'></i></a>
           <a href="#" class="text-info"><i class='bx bxl-tiktok lead'></i></a>
           <a href="#" class="text-info"><i class='bx bxl-soundcloud lead'></i></a>
+          <small class="secondary small">&nbsp;{{ song.released_on|timesince }} ago</small>
+
         </div>
       </div>
       {% endfor %}
       <hr class="my-4">
+
+
+      <!-- Pagination -->
+      {% if songs.has_other_pages %}
       <nav aria-label="Page navigation example">
         <ul class="pagination justify-content-center">
+
+          {% if songs.has_previous %}
+          <li class="page-item"><a class="page-link text-info"
+              href="?page={{ songs.previous_page_number }}{% if request.GET.get.q %}&q={{ request.GET.get.q }}{% endif %}">Previous</a>
+          </li>
+          {% else %}
           <li class="page-item">
             <a class="page-link text-danger" href="#" aria-label="Previous">
               <span aria-hidden="true">&laquo;</span>
             </a>
           </li>
-          <li class="page-item"><a class="page-link text-info" href="#">1</a></li>
-          <li class="page-item"><a class="page-link text-info" href="#">2</a></li>
-          <li class="page-item"><a class="page-link text-info" href="#">3</a></li>
+          {% endif %}
+          {% if songs.has_next %}
+          <li class="page-item"><a class="page-link text-info"
+              href="?page={{ songs.next_page_number }}{% if request.GET.get.q %}&q={{ request.GET.get.q }}{% endif %}">Next</a>
+          </li>
+          {% else %}
           <li class="page-item">
             <a class="page-link text-danger" href="#" aria-label="Next">
               <span aria-hidden="true">&raquo;</span>
             </a>
           </li>
+          {% endif %}
         </ul>
       </nav>
+      {% endif %}
     </div>
   </div>
 </section>
