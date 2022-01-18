@@ -115,7 +115,8 @@ class Session(models.Model):
     facebook_link = models.CharField(max_length=500, null=True, blank=True)
     instagram_link = models.CharField(max_length=500, null=True, blank=True)
     youtube_link = models.CharField(max_length=500, null=True, blank=True)
-    booking_date = models.DateTimeField(auto_now_add=False, null=True)
+    booking_date = models.DateField(auto_now_add=False, null=True)
+    booking_time = models.TimeField(auto_now_add=False, null=True)
     
     def __str__(self):
         return self.full_name + ' | ' + str(self.email_address)

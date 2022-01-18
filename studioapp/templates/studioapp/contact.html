@@ -1,0 +1,65 @@
+{% extends 'studioapp/base.html' %} {% load static %} {% load crispy_forms_tags %} {% block content %}
+<section class="contact section-padding-100-70">
+    <div class="container">
+        <h1 class="text-center mb-5 text-light con-head" style="font-family: 'Archivo Narrow', sans-serif;">Contact
+            Details</h1>
+        <div class="row">
+            <div class="col-12 col-lg-3">
+                <div class="contact-content mb-100">
+                    <!-- Title -->
+                    <div class="contact-title mb-50">
+                        <h5 class="text-light">Contact Info</h5>
+                    </div>
+
+                    <!-- Single Contact Info -->
+                    <div class="single-contact-info d-flex align-items-center">
+                        <div class="icon mr-30">
+                            <i class="fa fa-map-marker text-light"></i>
+                        </div>
+                        <p class="con text-light">Ground Floor, Ephesians 3:20 Building, Kikuyu</p>
+                    </div>
+
+                    <!-- Single Contact Info -->
+                    <div class="single-contact-info d-flex align-items-center">
+                        <div class="icon mr-30">
+                            <a href="#"><i class="fa fa-phone text-light"></i></a>
+                        </div>
+                        <p class="con text-light">+254 712 234567</p>
+                    </div>
+
+                    <!-- Single Contact Info -->
+                    <div class="single-contact-info d-flex align-items-center">
+                        <div class="icon mr-30">
+                            <a href="#"><i class="fa fa-envelope-o text-light"></i></a>
+                        </div>
+                        <p class="con text-light">hatsoffpro@gmail.com</p>
+                    </div>
+
+                    <!-- Contact Social Info -->
+                    <div class="contact-social-info mt-50">
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><i
+                                class="fa fa-twitter text-light"></i></a>
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Linkedin"><i
+                                class="fa fa-linkedin text-light"></i></a>
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Linkedin"><i
+                                class="fa fa-instagram text-light"></i></a>
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Linkedin"><i
+                                class="fa fa-facebook text-light"></i></a>
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Linkedin"><i
+                                class="fa fa-google-plus text-light"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-9">
+                <!-- ##### Google Maps ##### -->
+                <div class="map-area mb-100">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.875317988064!2d36.66665028447134!3d-1.2457359941191628!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1f1bbef5cf4b%3A0x550fc9f9bf3500f0!2sEphesians%203%3A20%20Building!5e0!3m2!1sen!2ske!4v1641122682344!5m2!1sen!2ske"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

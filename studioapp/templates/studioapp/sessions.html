@@ -1,0 +1,38 @@
+{% extends 'studioapp/base.html' %} {% load static %} {% load crispy_forms_tags %} {% block content %}
+<section class="sessions section-padding-100-70">
+    <div class="container">
+
+        <table class="table table-borderless">
+            <thead class="bg-info">
+                <tr class="text-light">
+                    <th scope="col">Name</th>
+                    <th scope="col">Mobile Number</th>
+                    <th scope="col">E-mail</th>
+                    <th scope="col">Social Media</th>
+                    <th scope="col">Date Booked</th>
+                    <th scope="col">Time Booked</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for sess in sess %}
+                <tr>
+                    <td>{{ sess.full_name }}</td>
+                    <td>{{ sess.mobile_number }}</td>
+                    <td>{{ sess.email_address }}</td>
+                    <td>
+                        <div class="links">
+                            <a href="{{ sess.facebook_link }}" target="_blank" rel="noopener noreferrer"><i class='bx bxl-facebook-circle'></i></a>
+                            <a href="{{ sess.instagram_link }}"target="_blank" rel="noopener noreferrer"><i class='bx bxl-instagram-alt'></i></a>
+                            <a href="{{ sess.youtube_link }}" target="_blank" rel="noopener noreferrer"><i class='bx bxl-youtube'></i></a>
+                        </div>
+                    </td>
+                    <td>{{ sess.booking_date }}</td>
+                    <td>{{ sess.booking_time }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+</section>
+{% endblock %}

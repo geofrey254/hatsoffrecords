@@ -23,6 +23,9 @@ def about(request):
     songs = Song.objects.filter(status=1).order_by('-released_on')[0:10]
     return render(request, 'studioapp/about.html', {'songs':songs})
 
+def contact(request):
+    return render(request, 'studioapp/contact.html')
+
 def events(request):
     events = Events.objects.filter(status=1).order_by('event_date')
     feature = Events.objects.filter(featured=True).order_by('event_date')[0:3]
@@ -72,5 +75,10 @@ def booking(request):
         'form':form,
         'full_name':full_name
     }
-    return render(request, 'studioapp/book.html', context)    
+    return render(request, 'studioapp/book.html', context)
+
+def sessions(request):
+    sess = Session.objects.order_by('booking_date').order_by('booking_time')
+    
+    return render(request, 'studioapp/sessions.html', {'sess':sess})
     
