@@ -8,42 +8,24 @@
                 <h2 class="topline text-danger">Art of the Muses</h2>
                 <h1 class="headline text-uppercase">Amazing Space, Excellent Gear, Exceptional Staff</h1>
                 <p class="hero-p">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                <a href="#" class="btn btn-danger text-light">Discover More</a>
+                <a href="{%url 'about' %}" class="btn btn-danger text-light">Discover More</a>
             </div>
             <div class="col-md-10 mx-auto col-lg-5">
                 <form class="p-4 p-md-5 border rounded-3 bg-light">
                     <h4 class="text-dark text-center">Latest Releases</h4>
-                    <div class="d-flex text-muted pt-3">
-                        <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
-                            <div class="d-flex justify-content-between">
-                                <strong class="text-info">No uhike</strong>
-                                <a href="#" class="text-info"><i class='bx bx-play-circle bx-tada lead'></i></a>
-                            </div>
-                            <span class="d-block">@kinandi</span>
-                        </div>
-                    </div>
 
+                    {%  for song in songs %}
                     <div class="d-flex text-muted pt-3">
                         <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
                             <div class="d-flex justify-content-between">
-                                <strong class="text-info">No uhike</strong>
-                                <a href="#" class="text-info"><i class='bx bx-play-circle bx-tada lead'></i></a>
+                                <strong class="text-info">{{ song.title }}</strong>
+                                <a href="{{ song.youtube }}" target="_blank" rel="noopener noreferrer" class="text-info"><i class='bx bx-play-circle bx-tada lead'></i></a>
                             </div>
-                            <span class="d-block">@kinandi</span>
+                            <span class="d-block">{{ song.artist }}</span>
                         </div>
                     </div>
-
-                    <div class="d-flex text-muted pt-3">
-                        <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
-                            <div class="d-flex justify-content-between">
-                                <strong class="text-info">No uhike</strong>
-                                <a href="#" class="text-info"><i class='bx bx-play-circle bx-tada lead'></i></a>
-                            </div>
-                            <span class="d-block">@kinandi</span>
-                        </div>
-                    </div>
+                    {%  endfor %}
                     <hr class="my-4">
-                    <small class="text-muted">By clicking Sign up, you agree to the terms of use.</small>
                 </form>
             </div>
         </div>
@@ -304,7 +286,7 @@
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae accusamus expedita et laudantium voluptates..
         </p>
 
-        <a href="#" class="btn btn-danger">Book Session</a>
+        <a href="{%url 'booking' %}" class="btn btn-danger">Book Session</a>
     </div>
 </section>
 {% endblock content %}

@@ -4,15 +4,18 @@ from django.core.mail import send_mail, send_mass_mail
 from django.conf import settings
 from django.views.generic import ListView, DetailView,View
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from .models import Song, Events, Team
+from .models import Song, Events, Team, Session
+from .forms import Session_booking
 # Create your views here.
 def home(request):
     rel = Song.objects.filter(status=1).order_by('-released_on')[0:3]
     event = Events.objects.filter(status=1).order_by('event_date')[0:3]
+    songs = Song.objects.filter(status=1).order_by('-released_on')[0:3]
 
     context = {
         'rel':rel,
-        'event':event
+        'event':event,
+        'songs':songs
     }
     return render(request, 'studioapp/home.html', context)
 
@@ -57,5 +60,17 @@ def releases(request):
     }
         
     return render(request, 'studioapp/releases.html', context)
+
+
+def booking(request):
+    form    =   Session_booking(request.POST or None, request.FILES)
+    full_name  =   request.POST.get('full_name')
+    if form.is_valid():
+        form.save()
     
+    context =   {
+        'form':form,
+        'full_name':full_name
+    }
+    return render(request, 'studioapp/book.html', context)    
     
