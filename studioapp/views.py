@@ -23,6 +23,9 @@ def about(request):
     songs = Song.objects.filter(status=1).order_by('-released_on')[0:10]
     return render(request, 'studioapp/about.html', {'songs':songs})
 
+def services(request):
+    return render(request, 'studioapp/services.html')
+
 def contact(request):
     return render(request, 'studioapp/contact.html')
 

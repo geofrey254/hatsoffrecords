@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
         crossorigin="anonymous" />
 
-    <link rel="stylesheet" href="{% static 'css/cool.css' %}">
+    <link rel="stylesheet" href="{% static 'css/hat.css' %}">
     <link rel="stylesheet" href="{% static 'css/res.css' %}">
 
     <link rel="shortcut icon" href="{% static 'img/hatsoff.png' %}" type="image/x-icon">
@@ -38,7 +38,7 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav mr-auto nav-socials">
                     <li class="nav-item">
-                        <a class="nav-link text-danger" href="#"><i class='bx bxl-facebook'></i></a>
+                        <a class="nav-link text-info" href="#"><i class='bx bxl-facebook'></i></a>
                     </li>
 
                     <li class="nav-item">
@@ -46,7 +46,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link text-danger" href="#"><i class='bx bxl-instagram'></i></a>
+                        <a class="nav-link text-info" href="#"><i class='bx bxl-instagram'></i></a>
                     </li>
 
                     <li class="nav-item">
@@ -54,7 +54,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link text-danger" href="#"><i class='bx bxl-tiktok'></i></a>
+                        <a class="nav-link text-info" href="#"><i class='bx bxl-tiktok'></i></a>
                     </li>
                 </ul>
                 <ul class="navbar-nav mr-auto">
@@ -67,7 +67,11 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link text-dark" href="{%url 'releases' %}">Releases</a>
+                        <a class="nav-link text-dark" href="{%url 'services' %}">Services</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="{%url 'releases' %}">Chart</a>
                     </li>
 
                     <li class="nav-item">
@@ -79,7 +83,7 @@
                     </li>
                 </ul>
 
-                <ul class="navbar-nav mr-auto">
+                <ul class="navbar-nav mr-auto small">
                     <li class="nav-item">
                         <a class="nav-link text-danger" href="{%url 'booking' %}">Book Session</a>
                     </li>
